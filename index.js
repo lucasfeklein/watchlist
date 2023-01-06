@@ -7,6 +7,15 @@ if (localStorage.getItem('watchlist')) {
     watchlistArray = JSON.parse(localStorage.getItem('watchlist'))
 }
 
+// click "SEARCH" when enter is pressed
+if (document.getElementById("input-text")){
+    document.getElementById("input-text").addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            document.getElementById("search").click()
+        }
+    })
+}
+
 document.addEventListener('click', function(e){
     if (e.target.id === 'search'){
         renderMovieList()
